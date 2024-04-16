@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PizzaMAUI.Pages.MainPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="DarkGoldenrod">
+
+    <Grid RowDefinitions="Auto, * , Auto"
+      Padding="15,25">
+        
+        <Label Grid.Row="0"
+           Text="Pizza world"
+           FontSize="50"
+           HorizontalOptions="Center"
+           FontAttributes="Bold"
+           TextColor="SaddleBrown"/>
+
+        <Image Grid.Row="1"
+           Source="pizzaa.png"
+           HeightRequest="250"
+           WidthRequest="250"
+           VerticalOptions="Center"
+           HorizontalOptions="Center"
+           />
+
+        <VerticalStackLayout Grid.Row="2"
+                         Spacing="15">
+            <Label Text="The taste of Italian Pizza "
+               FontSize="40"
+               FontAttributes="Bold"
+               TextColor="SaddleBrown"/>
+
+            <Label Text="Feel the taste of mouth watering pizza from its origin country "
+               FontSize="18"
+               LineHeight="1.2"/>
+            <Border StrokeShape="RoundRectangle 25"
+                StrokeThickness="0"
+                BackgroundColor="Goldenrod"
+                HeightRequest="50">
+
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGesturRecognizer_Tapped"/>
+                </Border.GestureRecognizers>
+
+
+                <HorizontalStackLayout HorizontalOptions="Center"
+                                   VerticalOptions="Center"
+                                   Spacing="10"
+                                   Padding="0,5">
+
+                    <Label Text="Get Started"
+                       VerticalOptions="Center"
+                       FontSize="18"/>
+
+                    <Image Source="right_arrow"
+                       VerticalOptions="Center"
+                       HeightRequest="30"/>
+
+
+                </HorizontalStackLayout>
+            </Border>
+
+
+        </VerticalStackLayout>
+
+    </Grid>
+    
+
+</ContentPage>
