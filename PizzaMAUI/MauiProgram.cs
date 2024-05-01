@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Maui;
+using PizzaMAUI.Pages;
 namespace PizzaMAUI
 {
     public static class MauiProgram
@@ -27,6 +28,8 @@ namespace PizzaMAUI
             //services.AddSingleton<HomeViewModel>();
             services.AddSingletonWithShellRoute<HomePage, HomeViewModel>(nameof(HomePage));
             services.AddSingletonWithShellRoute<AllPizzaPage, AllPizzaViewModel>(nameof(AllPizzaPage));
+
+            services.AddTransientWithShellRoute<DetailPage, DetailsViewModel>(nameof(DetailPage));
             return services;
         }
     }

@@ -157,9 +157,15 @@
                                         VerticalOptions="End"
                                         HorizontalOptions="Center"
                                         Padding="25,0"
+                                        Command="{Binding Source={x:RelativeSource AncestorType={x:Type vm:AllPizzaViewModel} }, Path=GoToDetailsPageCommand}"
+                                        CommandParameter="{Binding .}"
                                         />
-
+                                
                             </Grid>
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={x:RelativeSource AncestorType={x:Type vm:AllPizzaViewModel} }, Path=GoToDetailsPageCommand}"
+                                                      CommandParameter="{Binding .}"/>
+                            </Border.GestureRecognizers>
 
                         </Border>
 

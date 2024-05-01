@@ -25,7 +25,7 @@
         {
             Pizzas.Clear();
             Searching = true;
-            await Task.Delay(1000);
+            await Task.Delay(2000);
             foreach (var pizza in _pizzaService.SearchPizzas(searchTerm))
             {
                 Pizzas.Add(pizza);
@@ -33,6 +33,17 @@
 
             Searching = false;
             var pizzas = _pizzaService.SearchPizzas(searchTerm);
+        }
+
+        [RelayCommand]
+        private async Task GoToDeatilsPage(Pizza pizza)
+        {
+            var parameters = new Dictionary<string, object>
+            {
+                [nameof(DetailsViewModel.Pizza)] = pizza
+            };
+            await Shell.Current.GoToAsync(nameof(DetailPage), animate: true, parameters);
+
         }
 
     }
